@@ -24,7 +24,8 @@ int main(){
     std::cout << "Q = ";
     print_point(Q);
     std::cout << "R = ";
-    print_point(R);    
+    print_point(R);
+    return 0;    
 
 }
 
