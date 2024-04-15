@@ -10,7 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: first-step
-        run: echo "hello-world"
+        #run: echo "hello-world"
+        run: git config --global url.https://${{ secrets.mightymo}}@github.com/.insteadOf https://github.com/
       - name: Checkout code
         uses: actions/checkout@v2
         with:
