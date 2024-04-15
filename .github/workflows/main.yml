@@ -34,7 +34,7 @@ jobs:
       - name: Push changes
         uses: ad-m/github-push-action@main
         with:
-          branch: daily-contribution
+          branch: main #daily_contribution
           # Set the Git credentials - replace this with your own secrets
           github_token: ${{ secrets.SECRETTOKEN }}
       - name: Open pull request
