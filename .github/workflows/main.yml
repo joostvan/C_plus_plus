@@ -21,7 +21,7 @@ jobs:
       - name: Commit changes
         uses: EndBug/add-and-commit@v7
         with:
-          author_name: "Joost"
+          author_name: "joostvan"
           author_email: "jvanderborgh@gmail.com"
           message: "Daily contribution"
           # Set the files to commit - replace this with your own file paths
