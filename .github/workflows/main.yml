@@ -3,11 +3,14 @@ name: Daily Contributions
 on:
   schedule:
     - cron: '0 0 * * 1-5'
+  workflow_dispatch:
 
 jobs:
   make-contribution:
     runs-on: ubuntu-latest
     steps:
+      - name: first-step
+        run: echo "hello-world"
       - name: Checkout code
         uses: actions/checkout@v2
         with:
