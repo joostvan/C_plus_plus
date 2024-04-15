@@ -32,7 +32,7 @@ jobs:
           # Set the files to commit - replace this with your own file paths
           add: "README.md"
       - name: Push changes
-        uses: ad-m/github-push-action@main
+        uses: ad-m/github-push-action@master
         with:
           branch: main #daily_contribution
           # Set the Git credentials - replace this with your own secrets
