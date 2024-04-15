@@ -3,15 +3,20 @@ name: Daily Contributions
 on:
   schedule:
     - cron: '0 0 * * 1-5'
+  workflow_dispatch:
 
 jobs:
   make-contribution:
     runs-on: ubuntu-latest
     steps:
+      - name: first-step
+        run: echo "hello-world"
       - name: Checkout code
         uses: actions/checkout@v2
         with:
           # Checkout with full commit history
+          persist-credentials: false
+          force: true
           fetch-depth: 0
       - name: Make daily contribution
         run: |
@@ -27,9 +32,9 @@ jobs:
           # Set the files to commit - replace this with your own file paths
           add: "README.md"
       - name: Push changes
-        uses: ad-m/github-push-action@main
+        uses: ad-m/github-push-action@master
         with:
-          branch: daily-contribution
+          branch: main #daily_contribution
           # Set the Git credentials - replace this with your own secrets
           github_token: ${{ secrets.SECRETTOKEN }}
       - name: Open pull request
