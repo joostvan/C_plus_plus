@@ -28,7 +28,7 @@ jobs:
         uses: EndBug/add-and-commit@v7
         with:
           author_name: "joostvan"
-          author_email: "jvanderborgh@gmail.com"
+          author_email: "joost.of.1998@gmail.com"
           message: "Daily contribution"
           # Set the files to commit - replace this with your own file paths
           add: "README.md"
