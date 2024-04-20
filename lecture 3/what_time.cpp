@@ -23,6 +23,7 @@ If the hour is not in the range, 0 to 23 or the minute is not in the range 0-59 
 
 */
 
+// homework
 int main(){
     std::string input_string;
     std::cout << "What time is it?";
