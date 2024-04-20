@@ -10,7 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: first-step
-        run: echo "hello-world"
+        #run: echo "hello-world"
+        run: git config --global url.https://${{ secrets.mightymo}}@github.com/.insteadOf https://github.com/
       - name: Checkout code
         uses: actions/checkout@v2
         with:
@@ -27,7 +28,7 @@ jobs:
         uses: EndBug/add-and-commit@v7
         with:
           author_name: "joostvan"
-          author_email: "jvanderborgh@gmail.com"
+          author_email: "joost.of.1998@gmail.com"
           message: "Daily contribution"
           # Set the files to commit - replace this with your own file paths
           add: "README.md"
@@ -36,7 +37,7 @@ jobs:
         with:
           branch: main #daily_contribution
           # Set the Git credentials - replace this with your own secrets
-          github_token: ${{ GITHUB_TOKEN }}
+          github_token: ${{ secrets.mightymo }}
       - name: Open pull request
         uses: peter-evans/create-pull-request@v3
         with:
@@ -47,4 +48,4 @@ jobs:
           # Set the pull request body - replace this with your own content
           body: "This pull request was created automatically by a GitHub Actions workflow to make a daily contribution."
           # Set the Git credentials - replace this with your own secrets
-          token: ${{ GITHUB_TOKEN }}
+          token: ${{ secrets.mightymo }}
