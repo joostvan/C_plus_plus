@@ -47,7 +47,7 @@ TimeOfDay parse_time(std::string input){
     result.hour = hour;
     result.minute = minute;
 
-    TimeOfDay result {(unsigned int)hour, (unsigned int)minute}
+    TimeOfDay result {(unsigned int)hour, (unsigned int)minute};
     return result;
 
 }
