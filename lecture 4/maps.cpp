@@ -2,7 +2,7 @@
 #include <map>
 #include <string>
 #include <stdexcept>
-
+#include <map>
 int main(){
     std::map< std::string, std::string > student_names{};
     std::map< std::string, int > exam_grades {};
