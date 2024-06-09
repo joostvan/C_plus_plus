@@ -19,3 +19,4 @@ int main() {
     std::cout << "R has area " << get_rectangle_area(R) << std::endl;
     return 0;
 }
+
