@@ -38,6 +38,11 @@ double get_rectangle_area(Rectangle& rec) {
     return rec.width * rec.height;
 }
 
+Rectangle create_unit_square(){
+    Rectangle the_result {1,1};
+    return the_result;
+}
+
 int main() {
     Rectangle R{};
     Rectangle R2 {6, 10};
@@ -45,6 +50,8 @@ int main() {
     std::cout << "R has height " << R.height << std::endl;
     std::cout << "R has area " << R.get_area() << std::endl;
     std::cout << "R has area " << get_rectangle_area(R) << std::endl;
+    Rectangle S {create_unit_square()};
+    std::cout << "S has width" << S.get_width() << std::endl;
     return 0;
 }
 
