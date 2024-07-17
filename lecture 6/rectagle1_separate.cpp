@@ -38,6 +38,10 @@ Rectangle Rectangle::create_unit_square(){
     return result;
 }
 
+~Rectangle(){
+    std::cout << "Destructor";
+}
+
 int main(){
     Rectangle R {};
     Rectangle R2 {6, };
