@@ -20,13 +20,15 @@ class credit_card
                 throw std::invalid_argument{"Credit limit cannot be negative."};
             }
         }
-        double get_unpaid_balance(){
+        // const in front means returns const; const at the back means this function won't update the variable
+        double get_unpaid_balance() const {
             return unpaid_balance;
                 }
-        double get_credit_limit(){
+        double get_credit_limit() const{
             return credit_limit;
         }
-        double get_remaining_credit(){
+        double get_remaining_credit() const{
+            // member function gets to decide how to return the value
             auto remaining = get_credit_limit() - get_unpaid_balance();
             if (remaining < 0) {
                 return 0;
@@ -48,12 +50,12 @@ class credit_card
             }
             unpaid_balance -= amount;
         }
-        double print_card_details(c) const {
-            std::cout << "Unpaid balance: " << c.unpaid_balance << std::endl;
-            return unpaid_balance;
-        }
 };
-
+// member function may modify object
+void print_card_details( credit_card const & C) {
+    std::cout << "Unpaid balance: " << C.get_unpaid_balance() << std::endl;
+    std::cout << "Remaining credit = $ " << C.get_remaining_credit() << std::endl;
+}
 int main(){
     credit_card C1 {1000};
     credit_card C2 {5000};
